@@ -1,9 +1,3 @@
-import Items from "../components/Items";
+import Items from "./index";
 
-const Home = props => (
-  <p>
-    <Items />
-  </p>
-);
-
-export default Home;
+export default Items;

@@ -58,7 +58,7 @@ const Header = () => (
   <StyledHeader>
     <div className="bar">
       <Logo>
-        <Link href="">
+        <Link href="/">
           <a>Sick Fits</a>
         </Link>
       </Logo>
