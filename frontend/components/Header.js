@@ -51,6 +51,11 @@ const StyledHeader = styled.header`
     display: grid;
     grid-template-columns: 1fr auto;
     border-bottom: 10px solid ${props => props.theme.lightgrey};
+    padding: 20px;
+  }
+  .cart {
+    padding: 20px;
+    float: right;
   }
 `;
 
@@ -67,7 +72,7 @@ const Header = () => (
     <div className="sub-bar">
       <p>Search</p>
     </div>
-    <div>Cart</div>
+    <div className="cart">Cart</div>
   </StyledHeader>
 );
 
