@@ -106,7 +106,6 @@ const Mutations = {
       data: { resetToken, resetTokenExpiry }
     });
     // 3. Email them that reset token
-    console.log(res);
     return { message: "Thank you, and check your email!" };
   },
   async resetPassword(parent, args, ctx, info) {
