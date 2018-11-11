@@ -25,7 +25,7 @@ const Query = {
     // 2. check if the user has the permissions to query all the users
     hasPermission(ctx.request.user, ["ADMIN", "PERMISSIONUPDATE"]);
     // 3. If they do, query all the users!
-    return ctx.db.users({}, info);
+    return ctx.db.query.users({}, info);
   }
   // async items(parent, args, ctx, info) {
   //   const items = await ctx.db.query.items();
