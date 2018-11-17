@@ -26,7 +26,7 @@ const Cart = () => {
           <Query query={LOCAL_STATE_QUERY}>
             {({ data }) => {
               return (
-                <CartStyles open>
+                <CartStyles open={data.cartOpen}>
                   <header>
                     <CloseButton title="close" onClick={toggleCart}>
                       &times;
@@ -49,3 +49,4 @@ const Cart = () => {
 };
 
 export default Cart;
+export { LOCAL_STATE_QUERY, TOGGLE_CART_MUTATION };
