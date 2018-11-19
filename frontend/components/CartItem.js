@@ -19,22 +19,27 @@ const CartItemStyles = styled.li`
   }
 `;
 
-const CartItem = props => {
-  const { title, description, image, price } = props.cartItem.item;
+const CartItem = ({ cartItem }) => {
+  if (!cartItem.item)
+    return (
+      <CartItemStyles>
+        <p>This item has been removed.</p> <RemoveFromCart id={cartItem.id} />
+      </CartItemStyles>
+    );
   return (
     <CartItemStyles>
-      <img width="100" src={image} alt={title} />
+      <img width="100" src={cartItem.item.image} alt={cartItem.item.title} />
       <div className="cart-item-details">
-        <h3>{title}</h3>
+        <h3>{cartItem.item.title}</h3>
         <p>
-          {formatMoney(price * props.cartItem.quantity)}
+          {formatMoney(cartItem.item.price * cartItem.quantity)}
           {" - "}{" "}
           <em>
-            {props.cartItem.quantity} &times; {formatMoney(price)} each
+            {cartItem.quantity} &times; {formatMoney(cartItem.item.price)} each
           </em>{" "}
         </p>
       </div>
-      <RemoveFromCart id={props.cartItem.id} />
+      <RemoveFromCart id={cartItem.id} />
     </CartItemStyles>
   );
 };
