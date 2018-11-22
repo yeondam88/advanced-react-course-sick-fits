@@ -26,6 +26,7 @@ class TakeMyMoney extends React.Component {
             stripeKey="pk_test_waQWM77CL6MBQMLzJLQd6Mhm"
             currency="USD"
             email={me.email}
+            token={res => this.onToken(res)}
           >
             {this.props.children}
           </StripeCheckout>
