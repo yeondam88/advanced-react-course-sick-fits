@@ -285,7 +285,8 @@ const Mutations = {
             price 
             id 
             description 
-            image 
+            image
+            largeImage 
           }
         } 
       }`
@@ -305,7 +306,7 @@ const Mutations = {
     // 4. Convert the cartItems to OrderItems
     const orderItems = user.cart.map(cartItem => {
       const orderItem = {
-        ...cartItem,
+        ...cartItem.item,
         quantity: cartItem.quantity,
         user: {
           connect: { id: userId }
