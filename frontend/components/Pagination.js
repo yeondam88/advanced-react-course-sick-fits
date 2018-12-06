@@ -27,8 +27,7 @@ const Pagination = props => (
         <PaginationStyles data-test="pagination">
           <Head>
             <title>
-              Sick Fits! - Page {page} of{" "}
-              <span className="totalPages">{pages}</span>
+              Sick Fits! - Page {page} of {pages}
             </title>
           </Head>
           <Link
@@ -40,7 +39,7 @@ const Pagination = props => (
             </a>
           </Link>
           <p>
-            Page {props.page} of {pages}
+            Page {props.page} of <span className="totalPages">{pages}</span>
           </p>
           <p>{count} Items Total</p>
           <Link
